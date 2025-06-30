@@ -1,5 +1,4 @@
 <?php 
-//test
 require 'vendor/autoload.php';
 require 'vendor/altorouter/altorouter/AltoRouter.php';
 
