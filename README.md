@@ -1,2 +1,2 @@
-# mangatheque
+# mangateque
 coucou
