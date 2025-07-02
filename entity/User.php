@@ -50,11 +50,3 @@ class User {
         $this->email = $email;
     }
 }
-
-$user = new User(23, 'korben', 'korben@gmail.com', '123456789');
-
-echo $user->getPseudo() . '<br>';
-
-$user->setPseudo('paul');
-
-echo $user->getPseudo() . '<br>';
