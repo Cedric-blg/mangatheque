@@ -22,6 +22,16 @@ class ModelUser extends Model {
         return $user ? new User($user) : null;
     }
 
+    public function updateOneUserById(int $id, string $pseudo, string $email, string $password) : bool {
+        $req = $this->getDb()->prepare('UPDATE user set pseudo = :pseudo, email = :email, password = :password WHERE id = :id');
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+        $req->bindParam(':email', $email, PDO::PARAM_STR);
+        $req->bindParam(':password', $password, PDO::PARAM_STR);
+
+        return $req->execute();
+    }
+
     public function deleteOneUserById(int $id) : bool {
         $req = $this->getDb()->prepare('DELETE FROM user WHERE id = :id');
         $req->bindParam(':id', $id, PDO::PARAM_INT);

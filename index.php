@@ -9,7 +9,8 @@ $router->map('GET', '/', 'ControllerPage#homePage', 'homepage');
 
 //USER
 $router->map('GET', '/user/[i:id]', 'ControllerUser#oneUserById', 'userPage');
-$router->map('GET', '/user/delete/[i:id]', 'ControllerUser#deleteUserById', 'userdelete');
+$router->map('GET', '/user/delete/[i:id]', 'ControllerUser#deleteUserById', 'userDelete');
+$router->map('GET|POST', '/user/update/[i:id]', 'ControllerUser#updateUser', 'userUpdate');
 
 $match = $router->match();
 
